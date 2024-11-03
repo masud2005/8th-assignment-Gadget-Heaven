@@ -6,7 +6,14 @@ export default {
   ],
 
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: '#9538E2',
+      },
+      backgroundImage: {
+        banner: "url('./assets/banner-card.png')"
+      }
+    },
   },
   plugins: [
     require('daisyui'),
