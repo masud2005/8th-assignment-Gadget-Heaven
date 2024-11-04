@@ -3,6 +3,7 @@ import Heading from "../components/Heading";
 import { useEffect, useState } from "react";
 import { IoCartOutline } from "react-icons/io5";
 import { FaRegHeart } from "react-icons/fa";
+import { addToStoredCart } from "../utility/addToDb";
 
 const ProductDetails = () => {
 
@@ -19,9 +20,15 @@ const ProductDetails = () => {
         const singleProduct = allProducts.find(product => product.product_id === productId)
         setProduct(singleProduct);
     }, [])
-    console.log(product);
+    // console.log(product);
 
     const { product_title, price, description, specification, availability, rating } = product;
+
+    const addToCart = (product) => {
+        console.log(product);
+        addToStoredCart(product);
+    }
+
     return (
         <div>
             <div className="bg-primary pt-10 pb-48">
@@ -71,7 +78,7 @@ const ProductDetails = () => {
                             <p className="bg-gray-100 px-2 rounded-full">{rating}</p>
                         </div>
                         <div className="flex gap-5 pt-5">
-                            <button className="flex items-center gap-2 bg-primary hover:bg-gray-200 hover:text-black transition duration-200 rounded-full px-4 py-1 text-white">Add To Card <IoCartOutline size={20} /></button>
+                            <button onClick={() => addToCart(product)} className="flex items-center gap-2 bg-primary hover:bg-gray-200 hover:text-black transition duration-200 rounded-full px-4 py-1 text-white">Add To Cart <IoCartOutline size={20} /></button>
                             <button className="rounded-full p-2 bg-white border hover:bg-gray-200 transition duration-200"><FaRegHeart size={20} /></button>
                         </div>
                     </div>
