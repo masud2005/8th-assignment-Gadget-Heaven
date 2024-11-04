@@ -18,7 +18,7 @@ const Home = () => {
                     <div className="col-span-2 bg-white p-6 rounded-xl">
                         <Categories categories={categories} />
                     </div>
-                    <div className="col-span-10 ">
+                    <div className="col-span-10">
                         <Outlet />
                     </div>
                 </div>

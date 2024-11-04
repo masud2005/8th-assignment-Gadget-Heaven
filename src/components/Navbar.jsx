@@ -1,9 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaRegHeart } from 'react-icons/fa';
 import { IoCartOutline } from 'react-icons/io5';
 import { NavLink } from 'react-router-dom';
+import { getStoredCart, getStoredWishlist } from '../utility/addToDb';
+import { useCart } from '../utility/cartContext';
 
 const Navbar = () => {
+
+    const {cartCount, wishlistCount} = useCart();
+
+    // const [cartProducts, setCartProducts] = useState([]);
+    // const [wishListProducts, setWishlistProducts] = useState([]);
+
+    // useEffect(() => {
+    //     const storedCart = getStoredCart();
+    //     setCartProducts(storedCart);
+
+    //     const storedWishlist = getStoredWishlist();
+    //     setWishlistProducts(storedWishlist)
+    // }, [])
+
     return (
         <div className='sticky top-0 z-50 bg-gray-100/30 backdrop-blur-md'>
             <div className="navbar container mx-auto">
@@ -40,13 +56,29 @@ const Navbar = () => {
                         <NavLink to='/dashboard' className={({ isActive }) => `${isActive ? 'text-primary border border-primary font-medium rounded' : ''} px-4 py-1`}>Dashboard</NavLink>
                     </ul>
                 </div>
+                {/* <div className="navbar-end gap-2">
+                    <div className='relative'>
+                        <button className='bg-white border p-3 rounded-full'><IoCartOutline size={24} /></button>
+                        <span className='absolute -top-1 right-0 rounded-full bg-purple-200 px-2'>{cartProducts.length}</span>
+                    </div>
+                    <div className='relative'>
+                        <button className='bg-white border p-3 rounded-full'><FaRegHeart size={22} /></button>
+                        <span className='absolute -top-1 right-0 rounded-full bg-purple-200 px-2'>{wishListProducts.length}</span>
+                    </div>
+                </div> */}
                 <div className="navbar-end gap-2">
-                    <button className='bg-white border p-3 rounded-full'><IoCartOutline size={24}/></button>
-                    <button className='bg-white border p-3 rounded-full'><FaRegHeart size={22}/></button>
+                    <div className='relative'>
+                        <button className='bg-white border p-3 rounded-full'><IoCartOutline size={24} /></button>
+                        <span className='absolute -top-1 right-0 rounded-full bg-purple-200 px-2'>{cartCount}</span>
+                    </div>
+                    <div className='relative'>
+                        <button className='bg-white border p-3 rounded-full'><FaRegHeart size={22} /></button>
+                        <span className='absolute -top-1 right-0 rounded-full bg-purple-200 px-2'>{wishlistCount}</span>
+                    </div>
                 </div>
             </div>
         </div>
     );
 };
 
-export default Navbar;
+export default Navbar;  

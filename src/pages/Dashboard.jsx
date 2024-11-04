@@ -3,37 +3,47 @@ import Heading from '../components/Heading';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import AddCartContainer from '../components/AddCartContainer';
 import AddWishlistContainer from '../components/AddWishlistContainer';
-import { getStoredCart } from '../utility/addToDb';
+import { addToStoredCart, getStoredCart, getStoredWishlist } from '../utility/addToDb';
 import { TbAdjustmentsFilled } from 'react-icons/tb';
 // import 'react-tabs/style/react-tabs.css';
 
 const Dashboard = () => {
 
-    const [products, setProducts] = useState([]);
+    const [cartProducts, setProducts] = useState([]);
+    const [wishListProducts, setWishlistProducts] = useState([]);
     const [totalCost, setTotalCost] = useState(0)
 
     useEffect(() => {
+        // Cart
         const storedLocalStorageCart = getStoredCart();
         setProducts(storedLocalStorageCart)
 
+        // Wish list
+        const storedLocalStorageWishlist = getStoredWishlist();
+        setWishlistProducts(storedLocalStorageWishlist);
+
         // Calculate the total cost
         const totalProductCost = storedLocalStorageCart.reduce((sum, product) => sum + (product.price || 0), 0);
-        setTotalCost(totalProductCost); 
+        setTotalCost(totalProductCost);
     }, [])
-    // console.log(products)
+    // console.log(wishListProducts)
 
     // Sort by Price
     const handleSortByPrice = () => {
         // console.log('sorting')
-        const sortByPrice = [...products].sort((a,b) => b.price - a.price);
+        const sortByPrice = [...cartProducts].sort((a, b) => b.price - a.price);
         setProducts(sortByPrice);
     }
+
+    // const addToCard = (product) => {
+    //     console.log(product);
+    //     addToStoredCart(product)
+    // }
 
     return (
         <>
             <div className='bg-primary py-10 place-items-center'>
                 <Heading title='Dashboard' subtitle='Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!' />
-
             </div>
             <div className=''>
                 <Tabs>
@@ -53,12 +63,17 @@ const Dashboard = () => {
                                 </div>
                             </div>
                             {
-                                products.map(product => <AddCartContainer product={product} key={product.product_id}></AddCartContainer>)
+                                cartProducts.map(product => <AddCartContainer product={product} key={product.product_id}></AddCartContainer>)
                             }
                         </div>
                     </TabPanel>
                     <TabPanel>
-                        <AddWishlistContainer />
+                        <div className='container mx-auto mt-10'>
+                            {
+                                wishListProducts.map(wishProduct => <AddWishlistContainer wishProduct={wishProduct} key={wishProduct.product_id}></AddWishlistContainer>)
+                            }
+                        </div>
+                        
                     </TabPanel>
                 </Tabs>
             </div>

@@ -20,7 +20,6 @@ const AddCartContainer = ({ product }) => {
                         <button className='border border-red-500 rounded-full p-2 hover:bg-red-200 transition duration-200'><FaXmark size={24} color='red'/></button>
                     </div>
                 </div>
-
             </div>
         </div>
     );

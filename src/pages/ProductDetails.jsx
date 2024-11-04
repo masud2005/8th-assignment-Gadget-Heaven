@@ -3,9 +3,14 @@ import Heading from "../components/Heading";
 import { useEffect, useState } from "react";
 import { IoCartOutline } from "react-icons/io5";
 import { FaRegHeart } from "react-icons/fa";
-import { addToStoredCart } from "../utility/addToDb";
+import { addToStoredCart, addToStoredWishlist } from "../utility/addToDb";
+import { useCart } from "../utility/cartContext";
 
 const ProductDetails = () => {
+
+    const {incrementCart, incrementWishlist} = useCart();
+    const [cartClicked, setCartClicked] = useState(false);
+    const [wishlistClicked, setWishlistClicked] = useState(false);
 
     const [product, setProduct] = useState({});
 
@@ -19,15 +24,43 @@ const ProductDetails = () => {
     useEffect(() => {
         const singleProduct = allProducts.find(product => product.product_id === productId)
         setProduct(singleProduct);
-    }, [])
+    }, [allProducts, productId])
     // console.log(product);
 
     const { product_title, price, description, specification, availability, rating } = product;
 
+    // // Add to cart 
+    // const addToCart = (product) => {
+    //     // console.log(product);
+    //     addToStoredCart(product);
+    // }
+
+    // // Add to wishlist
+    // const addToWishlist = (product) => {
+    //     console.log(product)
+    //     addToStoredWishlist(product);
+    // }
+
     const addToCart = (product) => {
-        console.log(product);
+        if (cartClicked) {
+            alert("You have already added this product to the cart.");
+            return;
+        }
         addToStoredCart(product);
-    }
+        incrementCart();
+        setCartClicked(true); // Set the state to indicate the button has been clicked
+    };
+
+    const addToWishlist = (product) => {
+        if (wishlistClicked) {
+            alert("You have already added this product to the wishlist.");
+            return;
+        }
+        addToStoredWishlist(product);
+        incrementWishlist();
+        setWishlistClicked(true); // Set the state to indicate the button has been clicked
+    };
+
 
     return (
         <div>
@@ -78,8 +111,8 @@ const ProductDetails = () => {
                             <p className="bg-gray-100 px-2 rounded-full">{rating}</p>
                         </div>
                         <div className="flex gap-5 pt-5">
-                            <button onClick={() => addToCart(product)} className="flex items-center gap-2 bg-primary hover:bg-gray-200 hover:text-black transition duration-200 rounded-full px-4 py-1 text-white">Add To Cart <IoCartOutline size={20} /></button>
-                            <button className="rounded-full p-2 bg-white border hover:bg-gray-200 transition duration-200"><FaRegHeart size={20} /></button>
+                            <button onClick={() => addToCart(product)} className="flex items-center gap-2 bg-primary hover:bg-gray-200 hover:text-black transition duration-200 rounded-full px-4 py-1 text-white">Add To Card <IoCartOutline size={20} /></button>
+                            <button onClick={() => addToWishlist(product)} className="rounded-full p-2 bg-white border hover:bg-gray-200 transition duration-200"><FaRegHeart size={20} /></button>
                         </div>
                     </div>
                 </div>
