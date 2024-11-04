@@ -37,8 +37,9 @@ const routes = createBrowserRouter([
                 element: <Dashboard />
             },
             {
-                path: '/details',
-                element: <ProductDetails />
+                path: '/product-details/:productId',
+                element: <ProductDetails />,
+                loader: () => fetch('../all-products.json')
             }
         ]
     }

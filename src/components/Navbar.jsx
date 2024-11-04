@@ -1,9 +1,11 @@
 import React from 'react';
+import { FaRegHeart } from 'react-icons/fa';
+import { IoCartOutline } from 'react-icons/io5';
 import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
     return (
-        <div>
+        <div className='sticky top-0 z-50 bg-gray-100/30 backdrop-blur-md'>
             <div className="navbar container mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -38,8 +40,9 @@ const Navbar = () => {
                         <NavLink to='/dashboard' className={({ isActive }) => `${isActive ? 'text-primary border border-primary font-medium rounded' : ''} px-4 py-1`}>Dashboard</NavLink>
                     </ul>
                 </div>
-                <div className="navbar-end">
-                    <a className="btn">Button</a>
+                <div className="navbar-end gap-2">
+                    <button className='bg-white border p-3 rounded-full'><IoCartOutline size={24}/></button>
+                    <button className='bg-white border p-3 rounded-full'><FaRegHeart size={22}/></button>
                 </div>
             </div>
         </div>
