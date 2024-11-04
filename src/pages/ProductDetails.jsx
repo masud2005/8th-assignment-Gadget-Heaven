@@ -1,8 +1,8 @@
 
 const ProductDetails = () => {
     return (
-        <div>
-            
+        <div className="container mx-auto">
+            <h1>Details Component</h1>
         </div>
     );
 };

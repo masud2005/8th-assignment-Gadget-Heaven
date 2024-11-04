@@ -1,0 +1,155 @@
+[
+    {
+        "product_id": "C001",
+        "product_title": "Apple MacBook Air M2",
+        "product_image": "https://example.com/macbookairm2.jpg",
+        "category": "Computers",
+        "price": 1199,
+        "description": "Thin, light, and powerful with Apple's M2 chip.",
+        "specification": [
+            "13.6-inch Liquid Retina display",
+            "M2 chip",
+            "Up to 24GB RAM",
+            "Up to 2TB SSD storage",
+            "18-hour battery life"
+        ],
+        "availability": true,
+        "rating": 4.7
+    },
+    {
+        "product_id": "C002",
+        "product_title": "Dell Inspiron 15",
+        "product_image": "https://example.com/dellinspiron15.jpg",
+        "category": "Computers",
+        "price": 699,
+        "description": "Affordable and versatile laptop for everyday tasks.",
+        "specification": [
+            "15.6-inch FHD display",
+            "Intel Core i5 processor",
+            "8GB RAM",
+            "512GB SSD",
+            "10-hour battery life"
+        ],
+        "availability": true,
+        "rating": 4.5
+    },
+    {
+        "product_id": "C003",
+        "product_title": "HP Spectre x360",
+        "product_image": "https://example.com/hpspectrex360.jpg",
+        "category": "Computers",
+        "price": 1399,
+        "description": "High-performance 2-in-1 laptop with stunning design.",
+        "specification": [
+            "13.5-inch OLED display",
+            "Intel Core i7 processor",
+            "16GB RAM",
+            "512GB SSD",
+            "Convertible design"
+        ],
+        "availability": true,
+        "rating": 4.8
+    },
+    {
+        "product_id": "P001",
+        "product_title": "Samsung Galaxy S23",
+        "product_image": "https://example.com/galaxys23.jpg",
+        "category": "Phones",
+        "price": 899,
+        "description": "Powerful smartphone with excellent performance and camera.",
+        "specification": [
+            "6.1-inch Dynamic AMOLED display",
+            "Snapdragon 8 Gen 2",
+            "50MP Triple-camera system",
+            "5G connectivity",
+            "128GB storage"
+        ],
+        "availability": true,
+        "rating": 4.6
+    },
+    {
+        "product_id": "P002",
+        "product_title": "Apple iPhone 14",
+        "product_image": "https://example.com/iphone14.jpg",
+        "category": "Phones",
+        "price": 799,
+        "description": "Reliable performance and great camera in a sleek design.",
+        "specification": [
+            "6.1-inch Super Retina XDR display",
+            "A15 Bionic chip",
+            "Dual-camera system",
+            "5G connectivity",
+            "Up to 512GB storage"
+        ],
+        "availability": true,
+        "rating": 4.7
+    },
+    {
+        "product_id": "S001",
+        "product_title": "Apple Watch SE (2nd Gen)",
+        "product_image": "https://example.com/applewatchse.jpg",
+        "category": "Smart Watches",
+        "price": 249,
+        "description": "Essential features to keep you connected and active.",
+        "specification": [
+            "44mm Retina display",
+            "Heart rate and sleep tracking",
+            "Water-resistant up to 50 meters",
+            "18-hour battery life",
+            "Fall detection"
+        ],
+        "availability": true,
+        "rating": 4.4
+    },
+    {
+        "product_id": "S002",
+        "product_title": "Fitbit Versa 4",
+        "product_image": "https://example.com/fitbitversa4.jpg",
+        "category": "Smart Watches",
+        "price": 229,
+        "description": "Advanced fitness and health tracking with GPS.",
+        "specification": [
+            "1.58-inch color display",
+            "24/7 heart rate tracking",
+            "Built-in GPS",
+            "6-day battery life",
+            "Water-resistant"
+        ],
+        "availability": true,
+        "rating": 4.3
+    },
+    {
+        "product_id": "CH001",
+        "product_title": "Anker PowerPort III Nano",
+        "product_image": "https://example.com/ankerpowerport.jpg",
+        "category": "Chargers",
+        "price": 20,
+        "description": "Compact fast charger with 20W USB-C Power Delivery.",
+        "specification": [
+            "20W fast charging",
+            "USB-C Power Delivery",
+            "Compact design",
+            "Compatible with iPhone and Android",
+            "Lightweight and portable"
+        ],
+        "availability": true,
+        "rating": 4.8
+    },
+    {
+        "product_id": "PB001",
+        "product_title": "Xiaomi Mi Power Bank 3",
+        "product_image": "https://example.com/mipowerbank3.jpg",
+        "category": "Power Banks",
+        "price": 49,
+        "description": "High-capacity power bank with fast charging support.",
+        "specification": [
+            "20000mAh capacity",
+            "18W fast charging",
+            "Dual USB output",
+            "Lightweight and portable",
+            "Compatible with all devices"
+        ],
+        "availability": true,
+        "rating": 4.6
+    }
+]
