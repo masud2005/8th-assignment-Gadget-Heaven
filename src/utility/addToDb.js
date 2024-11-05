@@ -15,7 +15,7 @@ const addToStoredCart = (product) => {
     const storedPreviousCart = getStoredCart();
     const isExist = storedPreviousCart.find(storedCart => storedCart.product_id === product.product_id);
     if (isExist) {
-        alert('Product already exists in Cart');
+        return alert('Product already exists in Cart');
     }
     else {
         storedPreviousCart.push(product);

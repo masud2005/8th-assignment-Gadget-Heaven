@@ -48,8 +48,8 @@ const Dashboard = () => {
             <div className=''>
                 <Tabs>
                     <TabList className='flex gap-5 bg-primary pb-5 justify-center'>
-                        <Tab selectedClassName="bg-white text-[#9538E2] font-bold outline-none" className="text-white text-lg border px-10 py-2 rounded-full cursor-pointer">Cart</Tab>
-                        <Tab selectedClassName="bg-white text-[#9538E2] font-bold outline-none" className="text-white text-lg border px-10 py-2 rounded-full cursor-pointer">Wish List</Tab>
+                        <Tab selectedClassName="bg-white !text-[#9538E2] font-bold outline-none" className="text-white text-lg border px-10 py-2 rounded-full cursor-pointer">Cart</Tab>
+                        <Tab selectedClassName="bg-white !text-[#9538E2] font-bold outline-none" className="text-white text-lg border px-10 py-2 rounded-full cursor-pointer">Wish List</Tab>
                     </TabList>
 
                     <TabPanel>

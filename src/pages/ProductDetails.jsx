@@ -3,13 +3,13 @@ import Heading from "../components/Heading";
 import { useEffect, useState } from "react";
 import { IoCartOutline } from "react-icons/io5";
 import { FaRegHeart } from "react-icons/fa";
-import { addToStoredCart, addToStoredWishlist } from "../utility/addToDb";
+import { addToStoredCart, addToStoredWishlist, getStoredCart, getStoredWishlist } from "../utility/addToDb";
 import { useCart } from "../utility/cartContext";
 
 const ProductDetails = () => {
 
     const {incrementCart, incrementWishlist} = useCart();
-    const [cartClicked, setCartClicked] = useState(false);
+    // const [cartClicked, setCartClicked] = useState(false);
     const [wishlistClicked, setWishlistClicked] = useState(false);
 
     const [product, setProduct] = useState({});
@@ -42,23 +42,34 @@ const ProductDetails = () => {
     // }
 
     const addToCart = (product) => {
-        if (cartClicked) {
-            alert("You have already added this product to the cart.");
-            return;
+        const storedCart = getStoredCart();
+
+        const isExist = storedCart.find(item => item.product_id === productId)
+        // console.log(isExist);
+        if(isExist){
+            return alert('You have already added this product to the cart.')
         }
+        // if (cartClicked) {
+        //     alert("You have already added this product to the cart.");
+        //     return;
+        // }
         addToStoredCart(product);
         incrementCart();
-        setCartClicked(true); // Set the state to indicate the button has been clicked
+        // setCartClicked(true); // Set the state to indicate the button has been clicked
     };
 
     const addToWishlist = (product) => {
-        if (wishlistClicked) {
-            alert("You have already added this product to the wishlist.");
-            return;
+        setWishlistClicked(true);
+        const storedWishlist = getStoredWishlist();
+        const isExist = storedWishlist.find(item => item.product_id === productId);
+        if (isExist) {
+            return alert("You have already added this product to the wishlist.");
+            
         }
+
         addToStoredWishlist(product);
         incrementWishlist();
-        setWishlistClicked(true); // Set the state to indicate the button has been clicked
+        // setWishlistClicked(true); // Set the state to indicate the button has been clicked
     };
 
 
@@ -85,11 +96,6 @@ const ProductDetails = () => {
                                         <li key={index} className="text-gray-600 list-decimal mx-10">{item}</li>
                                     )
                                 }
-                                {/* {
-                                    specification.map((productSpecification, index) => 
-                                        <li key={index}>{productSpecification}</li>
-                                    )
-                                } */}
                             </ul>
                         </div>
                         <div className="flex items-center gap-1 pt-3">
@@ -112,7 +118,7 @@ const ProductDetails = () => {
                         </div>
                         <div className="flex gap-5 pt-5">
                             <button onClick={() => addToCart(product)} className="flex items-center gap-2 bg-primary hover:bg-gray-200 hover:text-black transition duration-200 rounded-full px-4 py-1 text-white">Add To Card <IoCartOutline size={20} /></button>
-                            <button onClick={() => addToWishlist(product)} className="rounded-full p-2 bg-white border hover:bg-gray-200 transition duration-200"><FaRegHeart size={20} /></button>
+                            <button onClick={() => addToWishlist(product)} disabled={wishlistClicked} className={`${wishlistClicked && 'hover:bg-transparent text-gray-200'} rounded-full p-2 bg-white border hover:bg-gray-200 transition duration-200`}><FaRegHeart size={20} /></button>
                         </div>
                     </div>
                 </div>
