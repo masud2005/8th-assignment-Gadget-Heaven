@@ -1,6 +1,7 @@
 import { Outlet, useLoaderData } from "react-router-dom";
 import Banner from "../components/Banner";
 import Categories from "../components/Categories";
+import { Helmet } from "react-helmet-async";
 
 const Home = () => {
 
@@ -9,6 +10,9 @@ const Home = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Home || Gadget Heaven</title>
+            </Helmet>
             {/* <h1>This is Home Component</h1> */}
             <Banner />
 
@@ -21,7 +25,7 @@ const Home = () => {
                     <div className="col-span-10">
                         <Outlet />
                     </div>
-                </div>
+                </div> 
             </div>
         </div>
     );

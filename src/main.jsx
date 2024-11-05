@@ -5,17 +5,15 @@ import './index.css'
 import { RouterProvider } from 'react-router-dom'
 import routes from './routes/Routes.jsx'
 import { CartProvider } from './utility/cartContext.jsx'
+import { HelmetProvider } from 'react-helmet-async'
 // import { CartProvider } from './utility/cartContext.js'
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <CartProvider>
-
-      <RouterProvider router={routes} />
-    </CartProvider>
-    {/* <CartProvider> */}
-
-    {/* </CartProvider> */}
-    {/* <App /> */}
-  </StrictMode>,
+  <HelmetProvider>
+    <StrictMode>
+      <CartProvider>
+        <RouterProvider router={routes} />
+      </CartProvider>
+    </StrictMode>,
+  </HelmetProvider>
 )

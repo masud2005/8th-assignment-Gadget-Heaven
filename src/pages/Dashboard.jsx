@@ -6,11 +6,15 @@ import AddWishlistContainer from '../components/AddWishlistContainer';
 import { addToStoredCart, getStoredCart, getStoredWishlist, removeCartStoredData } from '../utility/addToDb';
 import { TbAdjustmentsFilled } from 'react-icons/tb';
 import { useNavigate } from 'react-router-dom';
+import { useCart } from '../utility/cartContext';
+import { Helmet } from 'react-helmet-async';
 // import 'react-tabs/style/react-tabs.css';
 
 const Dashboard = () => {
 
     const navigate = useNavigate();
+    const {setCartCount} = useCart();
+    // console.log(setCartCount(8))
 
     const [cartProducts, setProducts] = useState([]);
     const [wishListProducts, setWishlistProducts] = useState([]);
@@ -41,10 +45,15 @@ const Dashboard = () => {
     // remove
     const removeAllCart = () => {
         // console.log('remove product')
+        navigate('/');
+    }
+
+    const handlePurchase = () => {
+        // console.log('Purchase btn');
         const updatedCart = removeCartStoredData();
         setProducts(updatedCart);
         setTotalCost(0);
-        navigate('/');
+        setCartCount(0);
     }
 
     // const addToCard = (product) => {
@@ -54,6 +63,9 @@ const Dashboard = () => {
 
     return (
         <>
+            <Helmet>
+                <title>Dashboard || Gadget Heaven</title>
+            </Helmet>
             <div className='bg-primary py-10 place-items-center'>
                 <Heading title='Dashboard' subtitle='Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!' />
             </div>
@@ -72,7 +84,7 @@ const Dashboard = () => {
                                     <h2 className='font-bold text-2xl mr-10'>Total cost: ${totalCost}</h2>
                                     <button onClick={handleSortByPrice} className='px-5 py-2 border border-primary rounded-full flex items-center gap-2 text-primary text-lg font-semibold'>Sort by Price <TbAdjustmentsFilled /></button>
                                     
-                                    <button onClick={() => document.getElementById('my_modal_5').showModal()} disabled={cartProducts.length === 0} className={`${cartProducts.length === 0 && 'bg-gray-300'} px-5 py-2 bg-primary rounded-full flex items-center gap-2 text-white text-lg font-semibold`}>Purchase</button>
+                                    <button onClick={() => {document.getElementById('my_modal_5').showModal(); handlePurchase()}} disabled={cartProducts.length === 0} className={`${cartProducts.length === 0 && 'bg-gray-300'} px-5 py-2 bg-primary rounded-full flex items-center gap-2 text-white text-lg font-semibold`}>Purchase</button>
 
                                     {/* Open the modal using document.getElementById('ID').showModal() method */}
                                     {/* <button className="btn" >open modal</button> */}

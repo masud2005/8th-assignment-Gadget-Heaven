@@ -31,7 +31,7 @@ export const CartProvider = ({ children }) => {
     const incrementWishlist = () => setWishlistCount(wishlistCount + 1);
 
     return (
-        <CartContext.Provider value={{ cartCount, wishlistCount, incrementCart, incrementWishlist }}>
+        <CartContext.Provider value={{ cartCount, wishlistCount, incrementCart, incrementWishlist, setCartCount }}>
             {children}
         </CartContext.Provider>
     );
