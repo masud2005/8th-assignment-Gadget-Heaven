@@ -26,6 +26,7 @@ const Navbar = () => {
         <NavLink to='/' className={({ isActive }) => `${isActive ? 'text-red-500 border border-red-500 font-medium rounded' : ''} px-4 py-1`}>Home</NavLink>
         <NavLink to='/statistics' className={({ isActive }) => `${isActive ? 'text-primary border border-primary font-medium rounded' : ''} px-4 py-1`}>Statistics</NavLink>
         <NavLink to='/dashboard' className={({ isActive }) => `${isActive ? 'text-primary border border-primary font-medium rounded' : ''} px-4 py-1`}>Dashboard</NavLink>
+        <NavLink to='/order history' className={({ isActive }) => `${isActive ? 'text-primary border border-primary font-medium rounded' : ''} px-4 py-1`}>Order History</NavLink>
     </>
 
     return (

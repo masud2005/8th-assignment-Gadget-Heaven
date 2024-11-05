@@ -6,6 +6,7 @@ import { RouterProvider } from 'react-router-dom'
 import routes from './routes/Routes.jsx'
 import { CartProvider } from './utility/cartContext.jsx'
 import { HelmetProvider } from 'react-helmet-async'
+import { Toaster } from 'react-hot-toast'
 // import { CartProvider } from './utility/cartContext.js'
 
 createRoot(document.getElementById('root')).render(
@@ -13,6 +14,7 @@ createRoot(document.getElementById('root')).render(
     <StrictMode>
       <CartProvider>
         <RouterProvider router={routes} />
+        <Toaster />
       </CartProvider>
     </StrictMode>,
   </HelmetProvider>

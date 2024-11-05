@@ -1,9 +1,12 @@
 import { useLoaderData, useParams } from "react-router-dom";
-import Heading from "../components/Heading";
+// import Heading from "../Heading";
 import { useEffect, useState } from "react";
 import { IoCartOutline } from "react-icons/io5";
 import { FaRegHeart } from "react-icons/fa";
 import { addToStoredCart, addToStoredWishlist, getStoredCart, getStoredWishlist } from "../utility/addToDb";
+// import { useCart } from "../../utility/cartContext";
+import toast from "react-hot-toast";
+import Heading from "../components/Heading";
 import { useCart } from "../utility/cartContext";
 
 const ProductDetails = () => {
@@ -47,7 +50,7 @@ const ProductDetails = () => {
         const isExist = storedCart.find(item => item.product_id === productId)
         // console.log(isExist);
         if(isExist){
-            return alert('You have already added this product to the cart.')
+            return toast.error('You have already added this product to the cart.')
         }
         // if (cartClicked) {
         //     alert("You have already added this product to the cart.");
@@ -63,7 +66,7 @@ const ProductDetails = () => {
         const storedWishlist = getStoredWishlist();
         const isExist = storedWishlist.find(item => item.product_id === productId);
         if (isExist) {
-            return alert("You have already added this product to the wishlist.");
+            return toast.error("You have already added this product to the wishlist.");
             
         }
 

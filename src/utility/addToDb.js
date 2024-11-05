@@ -1,3 +1,4 @@
+import toast from "react-hot-toast";
 
 // Cart
 const getStoredCart = () => {
@@ -15,12 +16,12 @@ const addToStoredCart = (product) => {
     const storedPreviousCart = getStoredCart();
     const isExist = storedPreviousCart.find(storedCart => storedCart.product_id === product.product_id);
     if (isExist) {
-        return alert('Product already exists in Cart');
+        return toast.error('Product already exists in Cart');
     }
     else {
         storedPreviousCart.push(product);
         localStorage.setItem('cart', JSON.stringify(storedPreviousCart));
-        alert('Successfully added to Cart');
+        toast.success('Successfully added to Cart');
     }
 }
 
@@ -41,13 +42,32 @@ const addToStoredWishlist = (product) => {
     const storedPreviousWishlist = getStoredWishlist();
     const isExist = storedPreviousWishlist.find(storedWishlist => storedWishlist.product_id === product.product_id);
     if (isExist) {
-        alert('Product already exists in Wishlist!');
+        toast.error('Product already exists in Wishlist!');
     }
     else {
         storedPreviousWishlist.push(product);
         localStorage.setItem('wish-list', JSON.stringify(storedPreviousWishlist));
-        alert('Successfully added to wishlist.')
+        toast.success('Successfully added to wishlist.')
     }
+}
+
+
+// Stored History
+const getStoredHistory = () => {
+    const storedHistory = localStorage.getItem('history');
+    if (storedHistory) {
+        const storedHistoryInt = JSON.parse(storedHistory);
+        return storedHistoryInt;
+    }
+    else {
+        return [];
+    }
+}
+
+const addToStoredHistory = (product) => {
+    const storedPreviousHistory = getStoredHistory();
+    storedPreviousHistory.push(product);
+    localStorage.setItem('history', JSON.stringify(storedPreviousHistory));
 }
 
 
@@ -59,4 +79,11 @@ const removeCartStoredData = () => {
     return [];
 }
 
-export { addToStoredCart, getStoredCart, addToStoredWishlist, getStoredWishlist, removeCartStoredData };
+// Remove all order history from local storage 
+const removeHistoryStoredData = () => {
+    toast.success("Clear All Product in History.")
+    localStorage.setItem('history', JSON.stringify([]));
+    return [];
+}
+
+export { addToStoredCart, getStoredCart, addToStoredWishlist, getStoredWishlist, removeCartStoredData, getStoredHistory, addToStoredHistory, removeHistoryStoredData };

@@ -1,6 +1,7 @@
 import React from 'react';
-import Heading from '../components/Heading';
+// import Heading from '../Heading';
 import { Helmet } from 'react-helmet-async';
+import Heading from '../components/Heading';
 
 const Statistics = () => {
     return (
