@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getStoredHistory, removeHistoryStoredData } from '../utility/addToDb';
 import Heading from '../components/Heading';
+import { Helmet } from 'react-helmet-async';
 
 const OrderHistory = () => {
 
@@ -16,6 +17,9 @@ const OrderHistory = () => {
 
     return (
         <>
+            <Helmet>
+                <title>Order History || Gadget Heaven</title>
+            </Helmet>
             <div className='bg-primary py-10 mb-10'>
                 <Heading title='Order History' subtitle='Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!'></Heading>
             </div>
