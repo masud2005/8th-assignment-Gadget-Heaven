@@ -1,12 +1,14 @@
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Banner = () => {
 
+    const {pathname} = useLocation();
+    // console.log(pathname)
     const navigate = useNavigate();
 
     return (
-        <div className="relative">
-            <div className="bg-primary pt-20 pb-56 mx-10 rounded-3xl m-2">
+        <div className=''>
+            <div className={`${(pathname === '/' || pathname === '/Computers' || pathname === '/Phones' || pathname === '/Smart%20Watches' || pathname === '/Chargers' || pathname === '/Power%20Banks' ) && '-mt-24'} bg-primary pt-20 pb-56 mx-10 rounded-3xl  m-2`}>
                 <div className="container mx-auto">
                     <h1 className="font-bold text-[56px] text-center text-white leading-[72px] mb-6">Upgrade Your Tech Accessorize with Gadget Heaven Accessories</h1>
                     <p className="text-center text-white mb-8">Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!</p>

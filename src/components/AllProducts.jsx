@@ -18,7 +18,7 @@ const AllProducts = () => {
         if (category) {
             const filteredByCategory = [...allProducts].filter(product => product.category === category);
             setProducts(filteredByCategory);
-            console.log(filteredByCategory)
+            // console.log(filteredByCategory)
         }
         else{
             setProducts(allProducts);

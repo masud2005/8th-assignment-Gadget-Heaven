@@ -73,7 +73,6 @@ const Dashboard = () => {
                                 wishListProducts.map(wishProduct => <AddWishlistContainer wishProduct={wishProduct} key={wishProduct.product_id}></AddWishlistContainer>)
                             }
                         </div>
-                        
                     </TabPanel>
                 </Tabs>
             </div>
