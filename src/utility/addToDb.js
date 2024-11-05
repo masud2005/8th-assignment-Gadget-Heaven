@@ -50,4 +50,13 @@ const addToStoredWishlist = (product) => {
     }
 }
 
-export { addToStoredCart, getStoredCart, addToStoredWishlist, getStoredWishlist };
+
+// Remove all cart list data from local storage
+const removeCartStoredData = () => {
+    // localStorage.removeItem('cart');
+    // alert("Successfully removed.")
+    localStorage.setItem('cart', JSON.stringify([]));
+    return [];
+}
+
+export { addToStoredCart, getStoredCart, addToStoredWishlist, getStoredWishlist, removeCartStoredData };

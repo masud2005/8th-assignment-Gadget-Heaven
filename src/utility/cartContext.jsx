@@ -7,6 +7,19 @@ export const useCart = () => useContext(CartContext);
 
 export const CartProvider = ({ children }) => {
 
+    // const [cartCount, setCartCount] = useState(0);
+    // const [wishlistCount, setWishlistCount] = useState(0);
+
+    // useEffect(() => {
+    //     const storedCart = getStoredCart();
+    //     const storedWishlist = getStoredWishlist();
+    //     const removeCart = removeCartStoredData();
+
+    //     setCartCount(storedCart.length);
+    //     setCartCount(removeCart.length);
+    //     setWishlistCount(storedWishlist.length);
+    // }, []);
+
     const storedCart = getStoredCart();
     const storedWishlist = getStoredWishlist();
     // console.log(storedCart.length);

@@ -9,7 +9,7 @@ const Navbar = () => {
 
     const { cartCount, wishlistCount } = useCart();
     const { pathname } = useLocation();
-    // console.log(pathname);
+    // console.log(pathname);   
 
     // const [cartProducts, setCartProducts] = useState([]);
     // const [wishListProducts, setWishlistProducts] = useState([]);

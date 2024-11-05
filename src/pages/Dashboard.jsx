@@ -3,11 +3,14 @@ import Heading from '../components/Heading';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import AddCartContainer from '../components/AddCartContainer';
 import AddWishlistContainer from '../components/AddWishlistContainer';
-import { addToStoredCart, getStoredCart, getStoredWishlist } from '../utility/addToDb';
+import { addToStoredCart, getStoredCart, getStoredWishlist, removeCartStoredData } from '../utility/addToDb';
 import { TbAdjustmentsFilled } from 'react-icons/tb';
+import { useNavigate } from 'react-router-dom';
 // import 'react-tabs/style/react-tabs.css';
 
 const Dashboard = () => {
+
+    const navigate = useNavigate();
 
     const [cartProducts, setProducts] = useState([]);
     const [wishListProducts, setWishlistProducts] = useState([]);
@@ -35,6 +38,15 @@ const Dashboard = () => {
         setProducts(sortByPrice);
     }
 
+    // remove
+    const removeAllCart = () => {
+        // console.log('remove product')
+        const updatedCart = removeCartStoredData();
+        setProducts(updatedCart);
+        setTotalCost(0);
+        navigate('/');
+    }
+
     // const addToCard = (product) => {
     //     console.log(product);
     //     addToStoredCart(product)
@@ -59,7 +71,24 @@ const Dashboard = () => {
                                 <div className='flex items-center gap-5'>
                                     <h2 className='font-bold text-2xl mr-10'>Total cost: ${totalCost}</h2>
                                     <button onClick={handleSortByPrice} className='px-5 py-2 border border-primary rounded-full flex items-center gap-2 text-primary text-lg font-semibold'>Sort by Price <TbAdjustmentsFilled /></button>
-                                    <button className='px-5 py-2 bg-primary rounded-full flex items-center gap-2 text-white text-lg font-semibold'>Purchase</button>
+                                    
+                                    <button onClick={() => document.getElementById('my_modal_5').showModal()} disabled={cartProducts.length === 0} className={`${cartProducts.length === 0 && 'bg-gray-300'} px-5 py-2 bg-primary rounded-full flex items-center gap-2 text-white text-lg font-semibold`}>Purchase</button>
+
+                                    {/* Open the modal using document.getElementById('ID').showModal() method */}
+                                    {/* <button className="btn" >open modal</button> */}
+                                    <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
+                                        <div className="modal-box">
+                                            <h3 className="font-bold text-lg">Hello!</h3>
+                                            <p className="py-4">Press ESC key or click the button below to close</p>
+                                            <div className="modal-action">
+                                                <form method="dialog">
+                                                    {/* if there is a button in form, it will close the modal */}
+                                                    <button onClick={() => removeAllCart()} className="btn">Close</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </dialog>
+
                                 </div>
                             </div>
                             {
