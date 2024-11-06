@@ -25,7 +25,7 @@ const OrderHistory = () => {
             </div>
 
             <div className='container mx-auto'>
-                <div className='flex justify-between items-center mb-5'>
+                <div className='flex flex-col md:flex-row justify-between items-center gap-5 mb-5 px-2'>
                     <h1 className='text-2xl font-semibold'>All Purchase Product History</h1>
                     <button onClick={() => clearHistory()} disabled={historyProduct.length === 0} className={`${historyProduct.length === 0 && '!bg-gray-300 !text-white border-gray-400'} rounded-full border border-primary text-primary bg-white px-4 py-2 hover:bg-purple-200 transition duration-200 font-semibold`}>Clear History</button>
                 </div>
@@ -36,10 +36,10 @@ const OrderHistory = () => {
                 }
                 {
                     historyProduct.map((product, index) =>
-                        <div key={index}>
-                            <div className='flex gap-6 bg-white  rounded-2xl p-5 mb-5 border'>
-                                <div className='w-2/6 border rounded-xl flex justify-center items-center'>
-                                    <img src={product.product_image} alt="Gadgets..." />
+                        <div className='px-2' key={index}>
+                            <div className='flex flex-col md:flex-row gap-6 bg-white  rounded-2xl p-5 mb-5 border'>
+                                <div className='md:w-2/6 border rounded-xl flex justify-center items-center'>
+                                    <img className='md:h-[200px] h-[230px]' src={product.product_image} alt="Gadgets..." />
                                 </div>
                                 <div>
                                     <div>

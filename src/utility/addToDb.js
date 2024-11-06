@@ -21,7 +21,8 @@ const addToStoredCart = (product) => {
     else {
         storedPreviousCart.push(product);
         localStorage.setItem('cart', JSON.stringify(storedPreviousCart));
-        toast.success('Successfully added to Cart');
+        // toast.success('Successfully added to Cart');
+        toast.success('You have successfully added this product to the Cart.');
     }
 }
 
@@ -47,7 +48,7 @@ const addToStoredWishlist = (product) => {
     else {
         storedPreviousWishlist.push(product);
         localStorage.setItem('wish-list', JSON.stringify(storedPreviousWishlist));
-        toast.success('Successfully added to wishlist.')
+        toast.success('You have successfully added this product to the wishlist.');
     }
 }
 
@@ -81,7 +82,7 @@ const removeCartStoredData = () => {
 
 // Remove all order history from local storage 
 const removeHistoryStoredData = () => {
-    toast.success("Clear All Product in History.")
+    toast.success("Clear All Products in History.")
     localStorage.setItem('history', JSON.stringify([]));
     return [];
 }

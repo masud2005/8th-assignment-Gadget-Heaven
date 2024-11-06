@@ -12,10 +12,10 @@ const AddWishlistContainer = ({wishProduct}) => {
     }
 
     return (
-        <div className=''>
-            <div className='flex gap-6 bg-white  rounded-2xl p-5 mb-5'>
-                <div className='w-1/5'>
-                    <img src={product_image} alt="Gadgets..." />
+        <div className='px-2'>
+            <div className='flex flex-col md:flex-row items-center gap-6 bg-white  rounded-2xl p-5 mb-5 relative'>
+                <div className='md:w-1/5 h-[140px] place-items-center'>
+                    <img className='h-full' src={product_image} alt="Gadgets..." />
                 </div>
                 <div className='flex justify-between w-full'>
                     <div>
@@ -24,7 +24,7 @@ const AddWishlistContainer = ({wishProduct}) => {
                         <p className='text-lg font-medium'>Price: ${price}</p>
                         <button onClick={() => addToCard(wishProduct)} className='bg-primary px-6 py-2 rounded-full text-white font-medium text-lg mt-4'>Add to Card</button>
                     </div>
-                    <div>
+                    <div className='absolute top-4 right-4'>
                         <button className='border border-red-500 rounded-full p-2 hover:bg-red-200 transition duration-200'><FaXmark size={24} color='red'/></button>
                     </div>
                 </div>

@@ -19,13 +19,13 @@ const Home = () => {
             {/* <Banner /> */}
             <Banner />
 
-            <div className="container mx-auto">
-                <h1 className="text-center font-bold text-4xl my-10">Explore Cutting-Edge Gadgets</h1>
-                <div className="grid grid-cols-12 gap-10">
-                    <div className="col-span-2">
+            <div className="container mx-auto px-2">
+                <h1 className="text-center font-bold text-3xl md:text-4xl my-10">Explore Cutting-Edge Gadgets</h1>
+                <div className="grid md:grid-cols-12 gap-5 ">
+                    <div className="md:col-span-3 lg:col-span-2">
                         <Categories categories={categories} />
                     </div>
-                    <div className="col-span-10">
+                    <div className="md:col-span-9 lg:col-span-10">
                         <Outlet />
                     </div>
                 </div> 

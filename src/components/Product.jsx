@@ -5,9 +5,9 @@ const Product = ({ product }) => {
     // console.log(product)
     const { product_id,product_title, price, product_image } = product;
     return (
-        <div className='bg-white rounded-xl p-4'>
-            <div className='w-full h-[180px] bg-gray-200 rounded-xl'>
-                <img src="" alt="" />
+        <div className='bg-white rounded-xl p-4 border'>
+            <div className='w-full h-[200px] rounded-xl'>
+                <img className='w-2/3 mx-auto h-full' src={product_image} alt="" />
             </div>
             <h1 className='text-2xl font-semibold pt-6 pb-2'>{product_title}</h1>
             <p className='text-lg font-medium text-gray-600 pb-3'>Price: {price}k</p>

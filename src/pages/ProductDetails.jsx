@@ -30,7 +30,7 @@ const ProductDetails = () => {
     }, [allProducts, productId])
     // console.log(product);
 
-    const { product_title, price, description, specification, availability, rating } = product;
+    const { product_title, price, description, specification, availability, rating, product_image } = product;
 
     // // Add to cart 
     // const addToCart = (product) => {
@@ -67,7 +67,6 @@ const ProductDetails = () => {
         const isExist = storedWishlist.find(item => item.product_id === productId);
         if (isExist) {
             return toast.error("You have already added this product to the wishlist.");
-            
         }
 
         addToStoredWishlist(product);
@@ -81,12 +80,12 @@ const ProductDetails = () => {
             <div className="bg-primary pt-10 pb-48">
                 <Heading title='Product Details' subtitle='Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!' />
             </div>
-            <div className="w-[50%] mx-auto bg-white border rounded-2xl p-5 -mt-40 ">
-                <div className="rounded-2xl flex gap-5">
-                    <div className="w-1/3 border h-auto rounded-2xl bg-gray-100">
-
+            <div className="w-11/12 mx-auto md:w-5/6 xl:w-4/6 md:mx-auto bg-white border rounded-2xl p-5 -mt-40">
+                <div className="rounded-2xl flex flex-col md:flex-row gap-5">
+                    <div className="h-[320px] md:w-1/3 border md:h-auto rounded-2xl bg-gray-100 place-content-center">
+                        <img className="w-full h-full md:h-auto" src={product_image} alt="" />
                     </div>
-                    <div className="w-2/3">
+                    <div className="md:w-2/3">
                         <h1 className="text-[28px] font-semibold">{product_title}</h1>
                         <p className="text-xl font-semibold text-gray-600 py-3">Price: ${price}</p>
                         <span className="border border-green-500 bg-green-100 text-green-600 p-[2px] px-3 rounded-full">{availability ? "inStock" : "OutOfStock"}</span>

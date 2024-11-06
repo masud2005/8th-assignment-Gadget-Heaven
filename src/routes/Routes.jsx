@@ -1,7 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
-// import Home from "../pages/Home";
-// import Home from "../pages/Home";
 import Statistics from "../pages/Statistics";
 import Dashboard from "../pages/Dashboard";
 import AllProducts from "../components/AllProducts";
@@ -9,7 +7,6 @@ import ProductDetails from "../pages/ProductDetails";
 import ErrorPage from "../pages/ErrorPage";
 import Home from "../pages/Home";
 import OrderHistory from "../pages/OrderHistory";
-// import ErrorPage from "../pages/ErrorPage";
 
 const routes = createBrowserRouter([
     {

@@ -2,7 +2,7 @@
     {
         "product_id": "C001",
         "product_title": "Apple MacBook Air M2",
-        "product_image": "https://example.com/macbookairm2.jpg",
+        "product_image": "https://i.ibb.co.com/NmcY5j6/macbook.jpg",
         "category": "Computers",
         "price": 1199,
         "description": "Thin, light, and powerful with Apple's M2 chip.",
@@ -17,43 +17,94 @@
         "rating": 4.7
     },
     {
-        "product_id": "C002",
-        "product_title": "Dell Inspiron 15",
-        "product_image": "https://example.com/dellinspiron15.jpg",
-        "category": "Computers",
-        "price": 699,
-        "description": "Affordable and versatile laptop for everyday tasks.",
+        "product_id": "S002",
+        "product_title": "Fitbit Versa 4",
+        "product_image": "https://i.ibb.co.com/1KWn4Jq/Versa-4-Waterfall-Blue-1319.jpg",
+        "category": "Smart Watches",
+        "price": 229,
+        "description": "Advanced fitness and health tracking with GPS.",
         "specification": [
-            "15.6-inch FHD display",
-            "Intel Core i5 processor",
-            "8GB RAM",
-            "512GB SSD",
-            "10-hour battery life"
+            "1.58-inch color display",
+            "24/7 heart rate tracking",
+            "Built-in GPS",
+            "6-day battery life",
+            "Water-resistant"
+        ],
+        "availability": true,
+        "rating": 4.3
+    },
+    {
+        "product_id": "S003",
+        "product_title": "Garmin Venu 2 Plus",
+        "product_image": "https://i.ibb.co.com/HnxC9Vf/download.jpg",
+        "category": "Smart Watches",
+        "price": 399,
+        "description": "Premium smartwatch with AMOLED display and voice assistant.",
+        "specification": [
+            "1.3-inch AMOLED display",
+            "GPS and heart rate monitoring",
+            "Voice assistant",
+            "9-day battery life",
+            "Water-resistant"
         ],
         "availability": true,
         "rating": 4.5
     },
     {
-        "product_id": "C003",
-        "product_title": "HP Spectre x360",
-        "product_image": "https://example.com/hpspectrex360.jpg",
+        "product_id": "C004",
+        "product_title": "Lenovo ThinkPad X1 Carbon",
+        "product_image": "https://i.ibb.co.com/SmrGCzC/download-1.jpg",
         "category": "Computers",
-        "price": 1399,
-        "description": "High-performance 2-in-1 laptop with stunning design.",
+        "price": 1499,
+        "description": "Durable and powerful business laptop.",
         "specification": [
-            "13.5-inch OLED display",
+            "14-inch FHD display",
             "Intel Core i7 processor",
             "16GB RAM",
-            "512GB SSD",
-            "Convertible design"
+            "1TB SSD",
+            "12-hour battery life"
         ],
         "availability": true,
-        "rating": 4.8
+        "rating": 4.6
+    },
+    {
+        "product_id": "C005",
+        "product_title": "Asus ROG Zephyrus G14",
+        "product_image": "https://i.ibb.co.com/TctP990/download-3.jpg",
+        "category": "Computers",
+        "price": 1299,
+        "description": "High-performance gaming laptop with AMD Ryzen.",
+        "specification": [
+            "14-inch QHD display",
+            "AMD Ryzen 9 processor",
+            "16GB RAM",
+            "1TB SSD",
+            "NVIDIA GeForce RTX 3060"
+        ],
+        "availability": true,
+        "rating": 4.7
+    },
+    {
+        "product_id": "C006",
+        "product_title": "Microsoft Surface Laptop 4",
+        "product_image": "https://i.ibb.co.com/7bMMk9W/download-4.jpg",
+        "category": "Computers",
+        "price": 1099,
+        "description": "Sleek and stylish laptop with great performance.",
+        "specification": [
+            "13.5-inch PixelSense display",
+            "Intel Core i5 processor",
+            "8GB RAM",
+            "512GB SSD",
+            "11.5-hour battery life"
+        ],
+        "availability": true,
+        "rating": 4.5
     },
     {
         "product_id": "P001",
         "product_title": "Samsung Galaxy S23",
-        "product_image": "https://example.com/galaxys23.jpg",
+        "product_image": "https://i.ibb.co.com/9wF0R26/download-5.jpg",
         "category": "Phones",
         "price": 899,
         "description": "Powerful smartphone with excellent performance and camera.",
@@ -70,7 +121,7 @@
     {
         "product_id": "P002",
         "product_title": "Apple iPhone 14",
-        "product_image": "https://example.com/iphone14.jpg",
+        "product_image": "https://i.ibb.co.com/2g56S9Y/download-6.jpg",
         "category": "Phones",
         "price": 799,
         "description": "Reliable performance and great camera in a sleek design.",
@@ -87,7 +138,7 @@
     {
         "product_id": "S001",
         "product_title": "Apple Watch SE (2nd Gen)",
-        "product_image": "https://example.com/applewatchse.jpg",
+        "product_image": "https://i.ibb.co.com/b6rwKcv/download-15.jpg",
         "category": "Smart Watches",
         "price": 249,
         "description": "Essential features to keep you connected and active.",
@@ -102,26 +153,43 @@
         "rating": 4.4
     },
     {
-        "product_id": "S002",
-        "product_title": "Fitbit Versa 4",
-        "product_image": "https://example.com/fitbitversa4.jpg",
-        "category": "Smart Watches",
-        "price": 229,
-        "description": "Advanced fitness and health tracking with GPS.",
+        "product_id": "C002",
+        "product_title": "Dell Inspiron 15",
+        "product_image": "https://i.ibb.co.com/5jbz4bP/download-16.jpg",
+        "category": "Computers",
+        "price": 699,
+        "description": "Affordable and versatile laptop for everyday tasks.",
         "specification": [
-            "1.58-inch color display",
-            "24/7 heart rate tracking",
-            "Built-in GPS",
-            "6-day battery life",
-            "Water-resistant"
+            "15.6-inch FHD display",
+            "Intel Core i5 processor",
+            "8GB RAM",
+            "512GB SSD",
+            "10-hour battery life"
         ],
         "availability": true,
-        "rating": 4.3
+        "rating": 4.5
+    },
+    {
+        "product_id": "C003",
+        "product_title": "HP Spectre x360",
+        "product_image": "https://i.ibb.co.com/k2T8wP7/download-8.jpg",
+        "category": "Computers",
+        "price": 1399,
+        "description": "High-performance 2-in-1 laptop with stunning design.",
+        "specification": [
+            "13.5-inch OLED display",
+            "Intel Core i7 processor",
+            "16GB RAM",
+            "512GB SSD",
+            "Convertible design"
+        ],
+        "availability": true,
+        "rating": 4.8
     },
     {
         "product_id": "CH001",
         "product_title": "Anker PowerPort III Nano",
-        "product_image": "https://example.com/ankerpowerport.jpg",
+        "product_image": "https://i.ibb.co.com/DQW3zvd/download-9.jpg",
         "category": "Chargers",
         "price": 20,
         "description": "Compact fast charger with 20W USB-C Power Delivery.",
@@ -136,9 +204,60 @@
         "rating": 4.8
     },
     {
+        "product_id": "CH002",
+        "product_title": "Belkin BoostCharge Pro",
+        "product_image": "https://i.ibb.co.com/yQSSnW7/download-10.jpg",
+        "category": "Chargers",
+        "price": 29,
+        "description": "High-speed wireless charger with 15W output.",
+        "specification": [
+            "15W wireless charging",
+            "Qi-certified",
+            "Compatible with iPhone and Android",
+            "Sleek design",
+            "Fast and efficient charging"
+        ],
+        "availability": true,
+        "rating": 4.6
+    },
+    {
+        "product_id": "CH003",
+        "product_title": "Samsung 45W Travel Adapter",
+        "product_image": "https://i.ibb.co.com/hCKF7wK/download-12.jpg",
+        "category": "Chargers",
+        "price": 35,
+        "description": "Powerful charger for Samsung Galaxy devices.",
+        "specification": [
+            "45W fast charging",
+            "USB-C compatibility",
+            "Compact and travel-friendly",
+            "Compatible with multiple Samsung devices",
+            "Efficient and reliable"
+        ],
+        "availability": true,
+        "rating": 4.7
+    },
+    {
+        "product_id": "CH004",
+        "product_title": "Apple 20W USB-C Power Adapter",
+        "product_image": "https://i.ibb.co.com/720Rvgr/download-13.jpg",
+        "category": "Chargers",
+        "price": 19,
+        "description": "Fast and efficient charger for Apple devices.",
+        "specification": [
+            "20W fast charging",
+            "USB-C Power Delivery",
+            "Compact design",
+            "Compatible with iPhone and iPad",
+            "Efficient charging"
+        ],
+        "availability": true,
+        "rating": 4.7
+    },
+    {
         "product_id": "PB001",
         "product_title": "Xiaomi Mi Power Bank 3",
-        "product_image": "https://example.com/mipowerbank3.jpg",
+        "product_image": "https://i.ibb.co.com/1fk5TJk/download-14.jpg",
         "category": "Power Banks",
         "price": 49,
         "description": "High-capacity power bank with fast charging support.",
