@@ -7,7 +7,6 @@ import routes from './routes/Routes.jsx'
 import { CartProvider } from './utility/cartContext.jsx'
 import { HelmetProvider } from 'react-helmet-async'
 import { Toaster } from 'react-hot-toast'
-// import { CartProvider } from './utility/cartContext.js'
 
 createRoot(document.getElementById('root')).render(
   <HelmetProvider>

@@ -3,7 +3,6 @@ import { useLocation, useNavigate } from "react-router-dom";
 const Banner = () => {
 
     const { pathname } = useLocation();
-    // console.log(pathname)
     const navigate = useNavigate();
 
     return (

@@ -15,8 +15,7 @@ const Home = () => {
             <Helmet>
                 <title>Home || Gadget Heaven</title>
             </Helmet>
-            {/* <h1>This is Home Component</h1> */}
-            {/* <Banner /> */}
+            
             <Banner />
 
             <div className="container mx-auto px-2">

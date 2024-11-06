@@ -3,7 +3,6 @@ import { FaXmark } from 'react-icons/fa6';
 import { addToStoredCart } from '../utility/addToDb';
 
 const AddWishlistContainer = ({wishProduct}) => {
-    // console.log(wishProduct);
     const { product_title, product_image, description, price } = wishProduct;
 
     const addToCard = (product) => {

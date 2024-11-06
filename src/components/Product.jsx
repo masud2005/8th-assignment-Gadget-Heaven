@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Product = ({ product }) => {
-    // console.log(product)
     const { product_id,product_title, price, product_image } = product;
     return (
         <div className='bg-white rounded-xl p-4 border'>

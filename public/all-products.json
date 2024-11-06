@@ -191,7 +191,7 @@
         "product_title": "Anker PowerPort III Nano",
         "product_image": "https://i.ibb.co.com/DQW3zvd/download-9.jpg",
         "category": "Chargers",
-        "price": 20,
+        "price": 63,
         "description": "Compact fast charger with 20W USB-C Power Delivery.",
         "specification": [
             "20W fast charging",
@@ -208,7 +208,7 @@
         "product_title": "Belkin BoostCharge Pro",
         "product_image": "https://i.ibb.co.com/yQSSnW7/download-10.jpg",
         "category": "Chargers",
-        "price": 29,
+        "price": 85,
         "description": "High-speed wireless charger with 15W output.",
         "specification": [
             "15W wireless charging",
@@ -242,7 +242,7 @@
         "product_title": "Apple 20W USB-C Power Adapter",
         "product_image": "https://i.ibb.co.com/720Rvgr/download-13.jpg",
         "category": "Chargers",
-        "price": 19,
+        "price": 52,
         "description": "Fast and efficient charger for Apple devices.",
         "specification": [
             "20W fast charging",
@@ -259,7 +259,7 @@
         "product_title": "Xiaomi Mi Power Bank 3",
         "product_image": "https://i.ibb.co.com/1fk5TJk/download-14.jpg",
         "category": "Power Banks",
-        "price": 49,
+        "price": 69,
         "description": "High-capacity power bank with fast charging support.",
         "specification": [
             "20000mAh capacity",

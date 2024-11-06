@@ -1,10 +1,8 @@
 import { useLoaderData, useParams } from "react-router-dom";
-// import Heading from "../Heading";
 import { useEffect, useState } from "react";
 import { IoCartOutline } from "react-icons/io5";
 import { FaRegHeart } from "react-icons/fa";
 import { addToStoredCart, addToStoredWishlist, getStoredCart, getStoredWishlist } from "../utility/addToDb";
-// import { useCart } from "../../utility/cartContext";
 import toast from "react-hot-toast";
 import Heading from "../components/Heading";
 import { useCart } from "../utility/cartContext";
@@ -12,53 +10,31 @@ import { useCart } from "../utility/cartContext";
 const ProductDetails = () => {
 
     const {incrementCart, incrementWishlist} = useCart();
-    // const [cartClicked, setCartClicked] = useState(false);
     const [wishlistClicked, setWishlistClicked] = useState(false);
 
     const [product, setProduct] = useState({});
 
     const { productId } = useParams();
-    // const id = parseInt(productId)
-    // console.log(productId);
 
     const allProducts = useLoaderData();
-    // console.log(allProducts);
 
     useEffect(() => {
         const singleProduct = allProducts.find(product => product.product_id === productId)
         setProduct(singleProduct);
     }, [allProducts, productId])
-    // console.log(product);
 
     const { product_title, price, description, specification, availability, rating, product_image } = product;
-
-    // // Add to cart 
-    // const addToCart = (product) => {
-    //     // console.log(product);
-    //     addToStoredCart(product);
-    // }
-
-    // // Add to wishlist
-    // const addToWishlist = (product) => {
-    //     console.log(product)
-    //     addToStoredWishlist(product);
-    // }
 
     const addToCart = (product) => {
         const storedCart = getStoredCart();
 
         const isExist = storedCart.find(item => item.product_id === productId)
-        // console.log(isExist);
         if(isExist){
             return toast.error('You have already added this product to the cart.')
         }
-        // if (cartClicked) {
-        //     alert("You have already added this product to the cart.");
-        //     return;
-        // }
+
         addToStoredCart(product);
         incrementCart();
-        // setCartClicked(true); // Set the state to indicate the button has been clicked
     };
 
     const addToWishlist = (product) => {
@@ -71,7 +47,6 @@ const ProductDetails = () => {
 
         addToStoredWishlist(product);
         incrementWishlist();
-        // setWishlistClicked(true); // Set the state to indicate the button has been clicked
     };
 
 
@@ -124,7 +99,6 @@ const ProductDetails = () => {
                         </div>
                     </div>
                 </div>
-                {/* <img className="mx-auto h-full bg-white/30 p-5 rounded-[30px] border-2 border-white" src="https://i.ibb.co.com/D9JjCs4/banner-card.png" alt="" /> */}
             </div>
         </div>
     );

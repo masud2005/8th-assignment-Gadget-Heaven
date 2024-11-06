@@ -8,13 +8,11 @@ import Heading from '../components/Heading';
 import AddCartContainer from '../components/AddCartContainer';
 import AddWishlistContainer from '../components/AddWishlistContainer';
 import { useCart } from '../utility/cartContext';
-import toast from 'react-hot-toast';
 
 const Dashboard = () => {
 
     const navigate = useNavigate();
     const { setCartCount } = useCart();
-    // console.log(setCartCount(8))
 
     const [cartProducts, setProducts] = useState([]);
     const [wishListProducts, setWishlistProducts] = useState([]);
@@ -33,35 +31,28 @@ const Dashboard = () => {
         const totalProductCost = storedLocalStorageCart.reduce((sum, product) => sum + (product.price || 0), 0);
         setTotalCost(totalProductCost);
     }, [])
-    // console.log(wishListProducts)
 
     // Sort by Price
     const handleSortByPrice = () => {
-        // console.log('sorting')
         const sortByPrice = [...cartProducts].sort((a, b) => b.price - a.price);
         setProducts(sortByPrice);
     }
 
     // remove
-    const removeAllCart = () => {
-        // console.log('remove product')
+    const handleClose = () => {
         navigate('/');
         setTotalCost(0);
     }
 
-    const [purchase, setPurchase] = useState([]);
     const handlePurchase = () => {
-        // console.log('Purchase btn');
         cartProducts.filter(product => {
             addToStoredHistory(product);
-            // setPurchase(product); // Assuming this function saves the product to local storage
         });
 
         const updatedCart = removeCartStoredData();
         setProducts(updatedCart);
         setCartCount(0);
     }
-    // console.log(purchase);
 
 
     return (
@@ -84,7 +75,6 @@ const Dashboard = () => {
                             <div className='flex justify-between items-center mb-8 p-2'>
                                 <h2 className='font-bold text-2xl hidden md:block'>Cart</h2>
                                 <div className='flex flex-col md:flex-row place-items-center  mx-auto md:mx-0 gap-5'>
-                                    {/* <div className='flex items-center'> */}
                                     <div>
                                         <h2 className='font-bold text-2xl md:mr-10'>Total cost: ${totalCost}</h2>
                                     </div>
@@ -96,7 +86,6 @@ const Dashboard = () => {
                                     {/* </div> */}
 
                                     {/* Open the modal using document.getElementById('ID').showModal() method */}
-                                    {/* <button className="btn" >open modal</button> */}
                                     <dialog id="my_modal_5" className="modal  modal-middle">
                                         <div className="modal-box">
                                             <img className='mx-auto' src="https://i.ibb.co.com/rpYJVrs/Verify.png" alt="" />
@@ -104,10 +93,7 @@ const Dashboard = () => {
                                             <p className="text-gray-500 text-center text-lg py-3">Thanks for purchasing</p>
                                             <p className='text-gray-500 text-center'>Total: ${totalCost}</p>
                                             <div className="modal-action justify-center">
-                                                {/* <form method="dialog"> */}
-                                                {/* if there is a button in form, it will close the modal */}
-                                                <button onClick={() => removeAllCart()} className="btn w-full text-xl">Close</button>
-                                                {/* </form> */}
+                                                <button onClick={() => handleClose()} className="btn w-full text-xl">Close</button>
                                             </div>
                                         </div>
                                     </dialog>

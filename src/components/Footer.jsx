@@ -7,7 +7,7 @@ const Footer = () => {
             <div className="container mx-auto flex justify-around py-10 border-t">
                 <div>
                     <h6 className="text-lg font-bold text-black mb-2">Services</h6>
-                    <div className="flex flex-col gap-1 text-gray-500">
+                    <div className="flex flex-col gap-1 text-gray-500 text-sm md:text-base">
                         <a className="link link-hover ">Branding</a>
                         <a className="link link-hover ">Design</a>
                         <a className="link link-hover ">Marketing</a>
@@ -16,7 +16,7 @@ const Footer = () => {
                 </div>
                 <div>
                     <h6 className="text-lg font-bold text-black mb-2">Company</h6>
-                    <div className="flex flex-col gap-1 text-gray-500">
+                    <div className="flex flex-col gap-1 text-gray-500 text-sm md:text-base">
                         <a className="link link-hover ">About us</a>
                         <a className="link link-hover ">Contact</a>
                         <a className="link link-hover ">Jobs</a>
@@ -25,7 +25,7 @@ const Footer = () => {
                 </div>
                 <div>
                     <h6 className="text-lg font-bold text-black mb-2">Legal</h6>
-                    <div className="flex flex-col gap-1 text-gray-500">
+                    <div className="flex flex-col gap-1 text-gray-500 text-sm md:text-base">
                         <a className="link link-hover ">Terms of use</a>
                         <a className="link link-hover ">Privacy policy</a>
                         <a className="link link-hover ">Cookie policy</a>

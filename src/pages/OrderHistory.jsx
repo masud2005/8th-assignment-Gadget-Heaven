@@ -27,7 +27,7 @@ const OrderHistory = () => {
             <div className='container mx-auto'>
                 <div className='flex flex-col md:flex-row justify-between items-center gap-5 mb-5 px-2'>
                     <h1 className='text-2xl font-semibold'>All Purchase Product History</h1>
-                    <button onClick={() => clearHistory()} disabled={historyProduct.length === 0} className={`${historyProduct.length === 0 && '!bg-gray-300 !text-white border-gray-400'} rounded-full border border-primary text-primary bg-white px-4 py-2 hover:bg-purple-200 transition duration-200 font-semibold`}>Clear History</button>
+                    <button onClick={() => clearHistory()} disabled={historyProduct.length === 0} className={`${historyProduct.length === 0 && '!bg-gray-300 !text-white !border-gray-200'} rounded-full border border-primary text-primary bg-white px-4 py-2 hover:bg-purple-200 transition duration-200 font-semibold`}>Clear History</button>
                 </div>
                 {historyProduct.length === 0 &&
                     <div>
