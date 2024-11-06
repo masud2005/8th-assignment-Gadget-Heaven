@@ -100,12 +100,18 @@ const Dashboard = () => {
                                 </div>
                             </div>
                             {
+                                cartProducts.length === 0 && <h1 className='text-red-500 text-4xl text-center font-semibold mt-10'>Card is Empty</h1>
+                            }
+                            {
                                 cartProducts.map(product => <AddCartContainer product={product} key={product.product_id}></AddCartContainer>)
                             }
                         </div>
                     </TabPanel>
                     <TabPanel>
                         <div className='container mx-auto mt-10'>
+                            {
+                                wishListProducts.length === 0 && <h1 className='text-red-500 text-4xl text-center font-semibold mt-20'>Wishlist is Empty</h1>
+                            }
                             {
                                 wishListProducts.map(wishProduct => <AddWishlistContainer wishProduct={wishProduct} key={wishProduct.product_id}></AddWishlistContainer>)
                             }
