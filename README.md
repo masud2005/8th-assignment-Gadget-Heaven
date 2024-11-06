@@ -1,12 +1,13 @@
 
 ## Project Name
-# Electronic Gadget Heaven
+## Electronic Gadget Heaven
 
 ## Live Website Link
 
 [https://e-gadget-heaven.surge.sh/](https://e-gadget-heaven.surge.sh/)
 
 ## Requirement Document Link
+[https://github.com/programming-hero-web-course-4/b10a8-gadget-heaven-masud2005/blob/main/project_requirments.pdf](Project_Requirments.pdf)
 
 
 
