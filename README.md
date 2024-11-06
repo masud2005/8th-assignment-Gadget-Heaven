@@ -1,4 +1,7 @@
 
+## Project Name
+# Electronic Gadget Heaven
+
 ## Live Website Link
 
 [https://e-gadget-heaven.surge.sh/](https://e-gadget-heaven.surge.sh/)
@@ -7,7 +10,7 @@
 
 
 
-# Gadget Heaven Dashboard
+## Gadget Heaven Dashboard
 
 Welcome to the **Gadget Heaven Dashboard**! This project is a dashboard-style application that allows users to manage a shopping cart and wishlist for the latest gadgets, with interactive features for sorting, purchasing, and updating their cart.
 
@@ -58,5 +61,3 @@ The Gadget Heaven Dashboard is built using **React** and includes features for m
 - **`react-icons`**: Provides access to a library of icons, adding visual appeal to buttons and headings.
 - **`react-helmet-async`**: Helps manage the document title and other metadata, useful for SEO and user experience.
 - **`react-hot-toast`**: Displays toast notifications to enhance feedback for actions like adding or removing items.
-
-
